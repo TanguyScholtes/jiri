@@ -19,10 +19,13 @@
     "autoload": {
         "classmap": [
             "database/seeds",
+            "database/migrations",
             "database/factories"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Jiri\\": "app/",
+            "Jiri\\controllers\\": "app/controllers"
         }
     },
     "autoload-dev": {
