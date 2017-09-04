@@ -45,6 +45,11 @@ class User extends Authenticatable
 {
     use Notifiable;
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public $timestamps = true;
     /**
      * The attributes that are mass assignable.

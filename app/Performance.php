@@ -49,6 +49,10 @@ class Performance extends Model
 
     use SoftDeletes;
     protected $dates = ['deleted_at'];
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
 
     public function student()
     {
