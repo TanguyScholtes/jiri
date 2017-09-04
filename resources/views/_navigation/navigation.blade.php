@@ -7,7 +7,9 @@
         @guest
             <a class="main-navigation--link" href="{{ route('login') }}">Se connecter</a>
         @else
-            <a href="{{ route('logout') }}"
+            <a class="main-navigation--link" href="{{ route('events.index') }}">Épreuves</a>
+
+            <a class="main-navigation--link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">
                 Se déconnecter

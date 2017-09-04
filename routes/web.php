@@ -19,3 +19,7 @@ Route::get('/dashboard', 'DashboardController@main');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+/*** EVENTS ***/
+Route::get('/events', 'EventsController@index')->name('events.index')->middleware('auth');
+Route::get('/events/{event}', 'EventsController@show')->name('events.show')->middleware('auth');
