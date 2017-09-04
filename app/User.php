@@ -1,6 +1,7 @@
 <?php
 
 namespace Jiri;
+namespace App;
 
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;

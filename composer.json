@@ -24,8 +24,7 @@
         ],
         "psr-4": {
             "App\\": "app/",
-            "Jiri\\": "app/",
-            "Jiri\\controllers\\": "app/controllers"
+            "Jiri\\": "app/"
         }
     },
     "autoload-dev": {
