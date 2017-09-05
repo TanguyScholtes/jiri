@@ -1,0 +1,70 @@
+td, th{
+    border: 1px solid darkgray;
+    text-align: center;
+}
+
+td{
+    padding: 0.75em;
+}
+
+th{
+    writing-mode: sideways-lr;
+    background-color: #F0F0F0;
+}
+
+.table-left-column{
+    writing-mode: horizontal-tb;
+}
+
+
+.user-1{
+    background-color: lightslategray;
+}
+
+.user-2{
+    background-color: lightblue;
+}
+
+.user-3{
+    background-color: lightgreen;
+}
+
+.user-4{
+    background-color: moccasin;
+}
+
+.user-5{
+    background-color: lightsalmon;
+}
+
+.user-6{
+    background-color: lightcoral;
+}
+
+.user-7{
+    background-color: lightpink;
+}
+
+.user-8{
+    background-color: mediumpurple;
+}
+
+.user-9{
+    background-color: lightslategray;
+}
+
+.user-10{
+    background-color: lightblue;
+}
+
+.user-11{
+    background-color: lightgreen;
+}
+
+.user-12{
+    background-color: moccasin;
+}
+
+.user-13{
+    background-color: lightsalmon;
+}

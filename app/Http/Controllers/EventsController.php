@@ -3,7 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Jiri\Event;
+use App\User;
+use Jiri\Weight;
+use Jiri\Project;
+use Jiri\Meeting;
+use Jiri\Implementation;
+use Jiri\Student;
 
 class EventsController extends Controller
 {
@@ -47,7 +54,25 @@ class EventsController extends Controller
      */
     public function show( Event $event )
     {
-        return view( 'events.show', compact( 'event' ) );
+        $owner = User::where( 'id', $event -> user_id )-> first();
+        $projects = DB::table( 'projects' ) -> join( 'weights', 'projects.id', '=', 'weights.project_id' ) -> where( 'event_id', $event -> id ) -> get();
+        $meetings = Meeting::with( 'student', 'user', 'scores' ) -> where( 'event_id', $event -> id ) -> get();
+        $implementations = Implementation::with( 'project', 'student', 'scores' ) -> where( 'event_id', $event -> id ) -> get();
+        $users = [];
+        foreach ( $meetings as $meeting ) {
+            if( !in_array( $meeting -> user, $users ) ) {
+                $users[] = $meeting -> user;
+            }
+        }
+        $students = [];
+        foreach ( $meetings as $meeting ) {
+            if( !in_array( $meeting -> student, $students ) ) {
+                $students[] = $meeting -> student;
+            }
+        }
+
+
+        return view( 'events.show', compact( 'event', 'owner', 'projects', 'meetings', 'implementations', 'students', 'users' ) );
     }
 
     /**

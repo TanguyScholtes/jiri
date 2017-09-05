@@ -4,6 +4,10 @@ namespace Jiri;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Jiri\Project;
+use Jiri\Event;
+use Jiri\Score;
+use Jiri\Student;
 
 /**
  * Jiri\Implementation
