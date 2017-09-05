@@ -52,7 +52,7 @@ class StudentsController extends Controller
      */
     public function show( Student $student )
     {
-        $implementations = Implementation::with( 'project', 'event' ) -> where( 'student_id', $student -> id ) -> get();
+        $implementations = Implementation::with( 'project', 'event', 'scores' ) -> where( 'student_id', $student -> id ) -> get();
         $meetings = Meeting::with( 'user', 'event', 'scores' ) -> where( 'student_id', $student -> id ) -> get();
 
         return view( 'students.show', compact( 'student', 'meetings', 'implementations' ) );
