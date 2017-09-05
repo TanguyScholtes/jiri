@@ -10,6 +10,7 @@
             <a class="main-navigation--link" href="{{ route('events.index') }}">Épreuves</a>
             <a class="main-navigation--link" href="{{ route('users.index') }}">Jury</a>
             <a class="main-navigation--link" href="{{ route('students.index') }}">Étudiants</a>
+            <a class="main-navigation--link" href="{{ route('projects.index') }}">Projets</a>
 
             <a class="main-navigation--link" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
