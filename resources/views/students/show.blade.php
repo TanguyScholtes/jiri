@@ -36,6 +36,7 @@
                                     @endif
                                 @endforeach
                             @endforeach
+                            <td><a href="{{ route('scores.create') }}">Évaluer ce travail</a></td>
                         </tr>
                     @endforeach
                 </tbody>

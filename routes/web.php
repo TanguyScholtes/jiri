@@ -35,3 +35,7 @@ Route::get( 'users/{user}/delete', 'UsersController@delete' ) -> name( 'users.de
 /*** STUDENTS ***/
 Route::resource( 'students', 'StudentsController' )->middleware('auth');
 Route::get( 'students/{student}/delete', 'StudentsController@delete' ) -> name( 'students.delete' )->middleware('auth');
+
+/*** SCORES ***/
+Route::resource( 'scores', 'ScoresController' )->middleware('auth');
+Route::get( 'scores/{score}/delete', 'ScoresController@delete' ) -> name( 'scores.delete' )->middleware('auth');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Jiri\Student;
 use Jiri\Implementation;
 use Jiri\Performance;
@@ -52,10 +53,11 @@ class StudentsController extends Controller
      */
     public function show( Student $student )
     {
+        $user = Auth::user();
         $implementations = Implementation::with( 'project', 'event', 'scores' ) -> where( 'student_id', $student -> id ) -> get();
         $meetings = Meeting::with( 'user', 'event', 'scores' ) -> where( 'student_id', $student -> id ) -> get();
 
-        return view( 'students.show', compact( 'student', 'meetings', 'implementations' ) );
+        return view( 'students.show', compact( 'user', 'student', 'meetings', 'implementations' ) );
     }
 
     /**
